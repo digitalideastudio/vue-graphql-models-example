@@ -1,4 +1,4 @@
-# src
+# Example
 
 ## Project setup
 ```
@@ -10,17 +10,7 @@ npm install
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Run local Apollo server
 ```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
+npm run apollo:run
 ```
