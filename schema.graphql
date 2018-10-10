@@ -1,0 +1,43 @@
+directive @cacheControl(maxAge: Int, scope: CacheControlScope) on FIELD_DEFINITION | OBJECT | INTERFACE
+
+enum CacheControlScope {
+  PUBLIC
+  PRIVATE
+}
+
+scalar DateTime
+
+type Fruit {
+  _id: ID
+  _key: ID
+  name: String!
+  color: String!
+  shape: String!
+  isTasty: Boolean
+  isTropic: Boolean
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input FruitInput {
+  name: String!
+  color: String!
+  shape: String!
+  isTasty: Boolean
+  isTropic: Boolean
+}
+
+type Mutation {
+  createFruit(data: FruitInput): Fruit!
+  updateFruit(_key: ID, data: FruitInput): Fruit!
+}
+
+type Query {
+  fetchFruit(_key: ID): Fruit!
+  fetchFruits: [Fruit]!
+}
+
+# The `Upload` scalar type represents a file upload promise that resolves an
+# object containing `stream`, `filename`, `mimetype` and `encoding`.
+scalar Upload
+

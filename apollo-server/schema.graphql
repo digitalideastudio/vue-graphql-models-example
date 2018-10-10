@@ -1,0 +1,31 @@
+scalar DateTime
+
+type Fruit {
+  _id: ID
+  _key: ID
+  name: String!
+  color: String!
+  shape: String!
+  isTasty: Boolean
+  isTropic: Boolean
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input FruitInput {
+  name: String!
+  color: String!
+  shape: String!
+  isTasty: Boolean
+  isTropic: Boolean
+}
+
+type Query {
+  fetchFruit(_key: ID): Fruit!
+  fetchFruits: [Fruit]!
+}
+
+type Mutation {
+  createFruit(data: FruitInput): Fruit!
+  updateFruit(_key: ID, data: FruitInput): Fruit!
+}

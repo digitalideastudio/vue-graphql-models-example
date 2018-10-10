@@ -1,0 +1,7 @@
+#import "../fragments/fruitGeneric.graphql"
+
+query fetchFruits {
+  fetchFruits {
+    ...fruitGeneric
+  }
+}

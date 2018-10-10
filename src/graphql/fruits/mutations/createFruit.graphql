@@ -1,0 +1,7 @@
+#import "../fragments/fruitGeneric.graphql"
+
+mutation createFruit ($data: FruitInput!) {
+  createFruit (data: $data) {
+    ...fruitGeneric
+  }
+}

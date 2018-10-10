@@ -1,0 +1,11 @@
+fragment fruitGeneric on Fruit {
+  _id
+  _key
+  name
+  color
+  shape
+  isTasty
+  isTropic
+  createdAt
+  updatedAt
+}
