@@ -16,8 +16,12 @@
     "graphql": "^14.0.2",
     "graphql-type-json": "^0.2.1",
     "vue": "^2.5.17",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
     "vue-apollo": "^3.0.0-beta.11",
-    "vue-graphql-models": "file:../vue-graphql-models/dist/index.js"
+    "vue-graphql-models": "^1.4.2",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.4",

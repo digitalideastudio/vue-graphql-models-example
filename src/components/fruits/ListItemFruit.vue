@@ -1,8 +1,9 @@
 <template>
-  <router-link :to="fruit.routerPath">
-    <span>Name: {{ fruit.name }}</span>
-    <span>Color: {{ fruit.color }}</span>
-  </router-link>
+  <div class="list-item-fruit">
+    <router-link :to="fruit.routerPath">
+      <span>{{ fruit.name }}</span>
+    </router-link>
+  </div>
 </template>
 
 <script>
@@ -20,3 +21,21 @@ export default {
   },
 };
 </script>
+
+<style lang="stylus"
+       scoped>
+  .list-item-fruit
+    a
+      color #041679
+      font-size 16px
+      border 1px solid #ccc
+      width calc(100% - 10px)
+      display block
+      padding 10px 5px
+      margin-top 10px
+      text-decoration none
+      background-color #c8e5ff
+
+      &:hover
+        background #ebf6ff
+</style>

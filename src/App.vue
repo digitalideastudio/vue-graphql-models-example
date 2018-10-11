@@ -1,27 +1,30 @@
 <template>
   <div id="app">
-    <PageFruits/>
+    <router-view/>
   </div>
 </template>
 
 <script>
-import { getView } from '../../src/lib/utils';
+import bootstrap from './bootstrap';
 
 export default {
-  name: 'app',
-  components: {
-    PageFruits: getView('PageFruits'),
-  }
-}
+  name: 'App',
+
+  created() {
+    bootstrap(this);
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="stylus">
+  body
+    padding 0
+    margin 0
+    overflow hidden
+    font-family 'Roboto'
+
+  #app
+    background-color #f1f6ff
+    height 100vh
+    padding: 15px
 </style>

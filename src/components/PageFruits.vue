@@ -3,6 +3,8 @@
     <label>
       <input
         v-model.trim="searchQuery"
+        autofocus
+        placeholder="Search by fruit name"
         @keyup.esc="searchQuery = ''"
       >
     </label>
@@ -15,14 +17,13 @@
 </template>
 
 <script>
-import { getView } from 'vue-graphql-models';
 import Fruit from '../models/Fruit';
 
 export default {
   name: 'PageFruits',
 
   components: {
-    ListItemAsset: getView('fruits/ListItemFruit'),
+    ListItemFruit: () => import('./fruits/ListItemFruit'),
   },
 
   data() {
@@ -55,3 +56,12 @@ export default {
   },
 };
 </script>
+
+<style lang="stylus" scoped>
+  input
+    display block
+    width calc(100% - 20px)
+    padding 10px
+    font-size 16px
+    margin-bottom 20px
+</style>
