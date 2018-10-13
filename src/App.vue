@@ -5,14 +5,8 @@
 </template>
 
 <script>
-import bootstrap from './bootstrap';
-
 export default {
   name: 'App',
-
-  created() {
-    bootstrap(this);
-  },
 };
 </script>
 
