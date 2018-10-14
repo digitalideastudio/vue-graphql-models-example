@@ -6,7 +6,17 @@ import App from './App';
 import { createProvider } from './vue-apollo';
 
 Vue.config.productionTip = false;
-Vue.use(VueGraphqlModels);
+Vue.use(VueGraphqlModels, {
+  gqlLoader(path) {
+    return import(/* webpackChunkName: "gql/[request]" */ `@/graphql/${path}.graphql`);
+  },
+  dataLoader(path) {
+    return import(/* webpackChunkName: "data/[request]" */ `@/data/${path}.json`);
+  },
+  modelLoader(path) {
+    return import(/* webpackChunkName: "models/[request]" */ `@/models/${path}`);
+  },
+});
 
 export default new Vue({
   store,
