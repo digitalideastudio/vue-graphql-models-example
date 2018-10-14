@@ -14,3 +14,7 @@ npm run serve
 ```
 npm run apollo:run
 ```
+
+or
+
+use the following GraphQL API Endpoint: `https://kkq07r8757.lp.gql.zone/graphql`
