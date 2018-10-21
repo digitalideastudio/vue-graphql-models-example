@@ -3,10 +3,11 @@ import VueGraphqlModels from 'vue-graphql-models';
 import store from '@/store';
 import router from '@/router';
 import App from './App';
-import { createProvider } from './vue-apollo';
+import { createProvider, cachePersistor } from './vue-apollo';
 
 Vue.config.productionTip = false;
 Vue.use(VueGraphqlModels, {
+  cachePersistor,
   gqlLoader(path) {
     return import(/* webpackChunkName: "gql/[request]" */ `@/graphql/${path}.graphql`);
   },

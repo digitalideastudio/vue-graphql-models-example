@@ -2,6 +2,8 @@
 import Vue from 'vue';
 import VueApollo from 'vue-apollo';
 import { createApolloClient, restartWebsockets } from 'vue-cli-plugin-apollo/graphql-client';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import { CachePersistor } from 'apollo-cache-persist';
 
 // Install the vue plugin
 Vue.use(VueApollo);
@@ -11,6 +13,14 @@ const AUTH_TOKEN = 'apollo-token';
 
 // Http endpoint
 const httpEndpoint = process.env.VUE_APP_GRAPHQL_HTTP || 'https://kkq07r8757.lp.gql.zone/graphql';
+
+const cache = new InMemoryCache();
+
+export const cachePersistor = new CachePersistor({
+  cache,
+  storage: window.localStorage,
+  debug: true,
+});
 
 // Config
 const defaultOptions = {
@@ -35,7 +45,7 @@ const defaultOptions = {
   // link: myLink
 
   // Override default cache
-  // cache: myCache
+  cache,
 
   // Override the way the Authorization header is set
   // getAuth: (tokenName) => ...
